@@ -21,7 +21,7 @@ Then run:
 
 The build folder will be at nwn.
 
-**Note** For me, I needed to install one package when to make in run in Ubuntu Mate 15.10
+**Note** I needed to install one package to make in run in Ubuntu Mate 15.10
 
     $ sudo apt-get install libsdl1.2debian:i386
 
