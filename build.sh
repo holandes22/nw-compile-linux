@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 if [ ! -d "app" ]; then
     innoextract -e setup_nwn_diamond_*.exe
 fi
