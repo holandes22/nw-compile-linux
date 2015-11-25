@@ -1,0 +1,29 @@
+FROM ubuntu:14.04
+
+RUN mkdir -p /tmp/Neverwinter/nwn
+WORKDIR /tmp/Neverwinter
+
+RUN apt-get update
+RUN apt-get install -y elfutils libglu1-mesa libglu1-mesa-dev \
+                       libglu-dev libstdc++5 libxcursor-dev libopenal1 libopenal-dev \
+                       perl ibsdl-mixer1.2-dev ibsdl-mixer1.2 libsdl-image1.2-dev \
+                       libsdl-image1.2 build-essential libX11-dev git \
+                       g++-multilib libelf-dev p7zip-full wget
+
+RUN git clone https://github.com/nwnlinux/nwlogger
+RUN git clone https://github.com/nwnlinux/nwmouse
+RUN git clone https://github.com/nwnlinux/nwmovies
+RUN git clone https://github.com/nwnlinux/nwuser
+
+RUN mv nwlogger/* /tmp/Neverwinter/nwn
+RUN mv nwmouse/* /tmp/Neverwinter/nwn
+RUN mv nwmovies/* /tmp/Neverwinter/nwn 
+RUN mv nwuser/* /tmp/Neverwinter/nwn
+
+RUN wget --quiet http://www.radgametools.com/down/Bink/BinkLinuxPlayer.7z
+RUN 7z x BinkLinuxPlayer.7z
+RUN mv BinkPlayer* /tmp/Neverwinter/nwn/nwmovies
+
+RUN wget --quiet http://nwdownloads.bioware.com/neverwinternights/linux/gold/nwclientgold.tar.gz
+RUN wget --quiet http://nwdownloads.bioware.com/neverwinternights/linux/161/nwclienthotu.tar.gz
+RUN wget --quiet http://files.bioware.com/neverwinternights/updates/linux/169/English_linuxclient169_xp2.tar.gz

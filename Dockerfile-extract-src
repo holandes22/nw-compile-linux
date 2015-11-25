@@ -1,0 +1,7 @@
+FROM ubuntu:14.04
+
+WORKDIR /tmp
+ADD . /tmp
+
+RUN apt-get install -y innoextract
+RUN innoextract -q -s -p 1 -e setup_nwn_diamond_*.exe
