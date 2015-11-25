@@ -80,7 +80,8 @@ I tried to do also the extraction from bin files in the container to automate th
 not caching the extract step thus causing every rebuild during dev to take forever.
 I then decided to leave this step to the user.
 
-The work I did on that, I placed it in another Dockerfile If you'd like to use it:
+The work I did on that, I placed it in another Dockerfile.
+If you'd like to use it, place the installer files from GOG to the folder and run:
 
     $ docker build -t nw-extract-src -f Dockerfile-extract-src .
     $ image_id=$(docker create nw-extract-src)
