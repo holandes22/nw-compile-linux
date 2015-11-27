@@ -1,3 +1,10 @@
+# Please note: Lutris
+
+After I created this, I found out that Lutris added a NWN installer, which is a much better experience as it is a one click solution, just point to the GOG install files and it'll do the rest for you. You should check that out first
+https://lutris.net/games/neverwinter-nights/
+
+If you don't want to use Lutris, please go on reading
+
 # What is this?
 
 This is based on the post by Pedro Mateus at L.G.C. blog
